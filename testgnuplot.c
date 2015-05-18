@@ -1,9 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "testgnuplot.h"
 #define NUM_POINTS 5
 #define NUM_COMMANDS 2
 
-int main()
+void test()
 {
     char * commandsForGnuplot[] = {"set title \"TITLEEEEE\"", "splot 'data.temp' w l"};
     double xvals[NUM_POINTS] = {1.0, 2.0, 3.0, 4.0, 5.0};
@@ -26,5 +27,4 @@ int main()
     fprintf(gnuplotPipe, "%s \n", commandsForGnuplot[i]); //Send commands to gnuplot one by one.
     fflush(gnuplotPipe);
     }
-    return 0;
 }
